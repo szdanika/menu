@@ -22,6 +22,7 @@ session_start(); // egy munka menet kezdete ( így nézi meg hogy ugyan az a fel
 		<a href='index.php?p=2'>Termékek</a><!-- ezt akár úgy is lehet hogy href='./?p=1' mert a index.php AZ ALAP -->
 		<a href='index.php?p=3'>Elérhetőség</a>
 		<a href='index.php?p=4'>Referenciák</a>
+		<a href='index.php?p=5'>email</a>
 	</div>
 	
 	<div id='tartalom'>
@@ -39,6 +40,10 @@ session_start(); // egy munka menet kezdete ( így nézi meg hogy ugyan az a fel
 			echo " hello"; else
 		if($p == 4)
 			echo"Referenciák" ;
+		if($p == 5)
+		{
+			include("email.php");
+		}
 		else 
 			include("rossz.php");
 		
@@ -66,10 +71,12 @@ session_start(); // egy munka menet kezdete ( így nézi meg hogy ugyan az a fel
 		}
 		
 		
-		echo session_id(); // egy munkamenet folyamata
+		//echo session_id(); // egy munkamenet folyamata
 	?>
-		Te vagy a<?php echo  $n ;?> látogató
+		Te vagy a <?php echo  $n ;?>. látogató
 	</div>
+	
+	<iframe name='kisablak'></iframe>
 </body>
 
 
